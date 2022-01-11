@@ -15,14 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    Route::get("/", [PesananController::class,"index"])->name("pesanan.index");
+Route::prefix("pesanan")->group(function () {
+    Route::get("/", [PesananController::class, "index"])->name("pesanan.index");
 });
 
-Route::prefix("pesanan")->group(function(){
-    Route::get("/", [PesananController::class,"index"])->name("pesanan.index");
-});
-
-Route::prefix("produk")->group(function(){
-    Route::get("/", [ProdukController::class,"index"])->name("produk.index");
+Route::prefix("produk")->group(function () {
+    Route::get("/", [ProdukController::class, "index"])->name("produk.index");
 });

@@ -26,8 +26,6 @@ class Produk extends Model
         left join \"Trx\".pesanan_produk pp on pp.produk_id = p.produk_id
         group  by pp.produk_id, p.nama, ps.stok ";
 
-        $queryBuilder = DB::select($sql);
-
-        return $queryBuilder;
+        return DB::select($sql);
     }
 }
